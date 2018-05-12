@@ -1,5 +1,5 @@
 {
-  "name": "emoji-cz",
+  "name": "@lxxyx/emoji-cz",
   "version": "0.3.0",
   "description": "A commitizen emoji adapter.",
   "preferGlobal": true,
