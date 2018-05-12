@@ -83,7 +83,7 @@ module.exports = function (options) {
         scope = scope ? '(' + answers.scope.trim() + ')' : '';
 
         // Hard limit this line
-        var head = (answers.type.emoji + '' + answers.type.name + scope + ': ' + answers.subject.trim()).slice(0, maxLineWidth);
+        var head = (answers.type.emoji + ' ' + answers.type.name + scope + ': ' + answers.subject.trim()).slice(0, maxLineWidth);
 
         // Wrap these lines at 100 characters
         var body = wrap(answers.body, wrapOptions);
