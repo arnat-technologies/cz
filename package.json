@@ -9,7 +9,6 @@
     "type": "git",
     "url": "https://github.com/kevin940726/emoji-cz.git"
   },
-  "author": "Kai Hao <kevin830726@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "conventional-commit-types": "^2.0.0",
