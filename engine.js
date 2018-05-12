@@ -20,9 +20,13 @@ module.exports = function (options) {
 
   var length = longest(Object.keys(types)).length + 1;
   var choices = map(types, function (type, key) {
+    var name = type.name || key;
     return {
-      name: rightPad(key + ':', length) + ' ' + type.description,
-      value: key
+      name: type.emoji + '  ' + rightPad(name + ':', length) + ' ' + type.description,
+      value: {
+        emoji: type.emoji,
+        name: name,
+      }
     };
   });
 
@@ -62,34 +66,6 @@ module.exports = function (options) {
           type: 'input',
           name: 'subject',
           message: 'Write a short, imperative tense description of the change:\n'
-        }, {
-          type: 'input',
-          name: 'body',
-          message: 'Provide a longer description of the change: (press enter to skip)\n'
-        }, {
-          type: 'confirm',
-          name: 'isBreaking',
-          message: 'Are there any breaking changes?',
-          default: false
-        }, {
-          type: 'input',
-          name: 'breaking',
-          message: 'Describe the breaking changes:\n',
-          when: function (answers) {
-            return answers.isBreaking;
-          }
-        }, {
-          type: 'confirm',
-          name: 'isIssueAffected',
-          message: 'Does this change affect any open issues?',
-          default: false
-        }, {
-          type: 'input',
-          name: 'issues',
-          message: 'Add issue references (e.g. "fix #123", "re #123".):\n',
-          when: function (answers) {
-            return answers.isIssueAffected;
-          }
         }
       ]).then(function (answers) {
 
