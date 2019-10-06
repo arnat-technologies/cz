@@ -1,37 +1,42 @@
 # emoji-cz
-> A [commitizen](https://github.com/commitizen/cz-cli) emoji adapter.
+
+> :sparkles: Un [adaptador](http://npm.im/emoji-cz) con emoji para commitizen.
 
 [![NPM](https://nodei.co/npm/emoji-cz.png?downloads=true&stars=true)](https://nodei.co/npm/emoji-cz/)
 
 ```
-? Select the type of change that you're committing: (Use arrow keys)
-❯ ✨  Feat:      A new feature
-  🐛  Fix:       A bug fix
-  📚  Docs:      Documentation only changes
-  🎨  Style:     Changes that do not affect the meaning of the code
-  🔨  Refactor:  A code change that neither fixes a bug nor adds a feature
-  🚀  Perf:      A code change that improves performance
-  🚨  Test:      Adding missing tests or correcting existing tests
+? Selecciona el tipo de cambio que estas enviando: (Use arrow keys)
+❯ ✨  Feat:      Una nueva característica
+  🐛  Fix:       Una corrección de error
+  📚  Docs:      Cambios solamente en documentación
+  🎨  Style:     Cambios que no afectan el código.
+  🔨  Refactor:  Un cambio de código que no corrige un error ni agrega una característica
+  🚀  Perf:      Un cambio de código que mejora el rendimiento.
+  🚨  Test:      Agregar pruebas faltantes o corregir pruebas existentes
 ```
 
 ## Demo
-Just check out the commit history above :point_up:
 
-## Installation
+Solo mira el historial de confirmaciones :point_up:
+
+## Instalation
+
 ```
-yarn global add emoji-cz
-# OR
-# npm install --global emoji-cz
+yarn global add @rsurjano/emoji-cz
+# O
+# npm install --global @rsurjano/emoji-cz
 
-# set as default adapter globally
+establecer como adaptador predeterminado globalmente
 echo '{ "path": "emoji-cz" }' > ~/.czrc
 ```
 
-## Usage
-Simply use `git cz` instead of `git commit` when committing. See the doc of [Commitizen](https://github.com/commitizen/cz-cli) for more info.
+## Uso
 
-## Settings
-You can overwrite the settings in 3 different ways, it will apply the config by this order:
+Simplemente use `git cz` en lugar de`git commit` cuando se comprometa. Ver el documento de [Commitizen](https://github.com/commitizen/cz-cli) para más información.
+
+## Configuraciones
+
+Puede sobrescribir la configuración de 3 formas diferentes, aplicará la configuración en este orden:
 
 1. `package.json`
 2. `.cz.json`
@@ -76,8 +81,10 @@ You can overwrite the settings in 3 different ways, it will apply the config by 
 }
 ```
 
-## Author
-Kai Hao <kevin830726@gmail.com>
+## Autor
 
-## License
+Roy Surjano <roy@surjano.xyz>
+
+## Licencia
+
 [MIT](LICENSE)

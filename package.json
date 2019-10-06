@@ -1,29 +1,45 @@
 {
-  "name": "@lxxyx/emoji-cz",
+  "name": "@rsurjano/emoji-cz",
   "version": "0.6.0",
-  "description": "A commitizen emoji adapter.",
+  "description": "Un adaptador emoji para commitizen en español.",
   "preferGlobal": true,
   "main": "index.js",
-  "homepage": "https://github.com/kevin940726/emoji-cz",
+  "homepage": "https://github.com/rsurjano/emoji-cz",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kevin940726/emoji-cz.git"
+    "url": "https://github.com/rsurjano/emoji-cz.git"
   },
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 10"
+  },
+  "author": "Roy Surjano <roy@surjano.xyz>",
   "license": "MIT",
   "dependencies": {
-    "conventional-commit-types": "^2.0.0",
     "find-config": "^1.0.0",
-    "lodash.map": "^4.5.1",
     "lodash.merge": "^4.6.0",
-    "longest": "^1.0.1",
     "pad-right": "^0.2.2",
+    "chalk": "^2.4.1",
+    "commitizen": "^4.0.3",
+    "conventional-commit-types": "^2.0.0",
+    "lodash.map": "^4.5.1",
+    "longest": "^2.0.1",
     "right-pad": "^1.0.1",
     "word-wrap": "^1.0.3"
   },
   "devDependencies": {
     "ava": "^0.18.2",
     "commitizen": "2.9.6",
-    "semantic-release": "^6.3.2"
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "cosmiconfig": "^5.2.1",
+    "mocha": "^6.2.0",
+    "mock-require": "^3.0.3",
+    "prettier": "^1.15.3",
+    "semantic-release": "^15.13.3",
+    "semver": "^6.2.0",
+    "conventional-changelog-cli": "^2.0.23"
   },
   "publishConfig": {
     "access": "public"
@@ -33,10 +49,11 @@
       "path": "./index.js"
     }
   },
-  "scripts": {
-    "test": "ava"
+  "optionalDependencies": {
+    "@commitlint/load": ">6.1.1"
   },
-  "engines": {
-    "node": ">= 6.0.0"
+  "scripts": {
+    "test": "ava",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   }
 }
