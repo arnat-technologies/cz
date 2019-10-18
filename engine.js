@@ -98,9 +98,8 @@ module.exports = function(options) {
                 'Agrega el # del ticket que estas trabajando:\n',
           default: '',
           validate: function (subject, answers) {
-            var filteredSubject = filterSubject(subject);
-            console.log("filteredSubject", filteredSubject);
-             return filteredSubject.length == 0
+            console.log("ticket", subject);
+             return subject.length == 0
                  ? "# del ticket es requerido"
                  : true
           },
@@ -210,7 +209,7 @@ module.exports = function(options) {
           ": " +
           answers.type.emoji +
           " CNPS-" + answers.ticket.toString() + " "
-          answers.subject.trim()
+          (answers.subject.trim())
         ).slice(0, options.maxLineWidth);
 
         // Wrap these lines at options.maxLineWidth characters
