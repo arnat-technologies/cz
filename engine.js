@@ -16,7 +16,7 @@ var headerLength = function(answers) {
   return (
     answers.type.name.length +
     2 +
-    (answers.scope ? answers.scope.length + 6 : 0)
+    (answers.scope ? answers.scope.length + 8 : 0)
   );
 };
 
@@ -205,7 +205,7 @@ module.exports = function(options) {
           scope +
           ": " +
           answers.type.emoji +
-          " CNPS-" + answers.ticket +
+          " CNPS-" + answers.ticket + " "
           answers.subject.trim()
         ).slice(0, options.maxLineWidth);
 
