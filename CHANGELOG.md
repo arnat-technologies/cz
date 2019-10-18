@@ -1,3 +1,7 @@
+## [0.10.3](https://github.com/rsurjano/emoji-cz/compare/v0.10.2...v0.10.3) (2019-10-18)
+
+
+
 ## [0.10.2](https://github.com/rsurjano/emoji-cz/compare/v0.10.1...v0.10.2) (2019-10-18)
 
 
