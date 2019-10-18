@@ -16,7 +16,7 @@ var headerLength = function(answers) {
   return (
     answers.type.name.length +
     2 +
-    (answers.scope ? answers.scope.length + 2 : 0)
+    (answers.scope ? answers.scope.length + 6 : 0)
   );
 };
 
@@ -90,6 +90,16 @@ module.exports = function(options) {
           name: "type",
           message: "Selecciona el tipo de cambio que estas enviando:",
           choices: choices
+        },
+        {
+          type: "input",
+          name: "ticket",
+          message:
+                'Agrega el # del ticket que estas trabajando:\n',
+          default: : undefined,
+          validate: function(subject, answers) {
+            return parseInt(subject) > 0
+          },
         },
         {
           type: "input",
@@ -195,7 +205,7 @@ module.exports = function(options) {
           scope +
           ": " +
           answers.type.emoji +
-          " " +
+          " CNPS-" + answers.ticket +
           answers.subject.trim()
         ).slice(0, options.maxLineWidth);
 
