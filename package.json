@@ -49,9 +49,6 @@
       "path": "./index.js"
     }
   },
-  "optionalDependencies": {
-    "@commitlint/load": ">6.1.1"
-  },
   "scripts": {
     "test": "ava",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"

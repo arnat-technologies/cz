@@ -96,9 +96,13 @@ module.exports = function(options) {
           name: "ticket",
           message:
                 'Agrega el # del ticket que estas trabajando:\n',
-          default: : undefined,
-          validate: function(subject, answers) {
-            return parseInt(subject) > 0
+          default: '',
+          validate: function (subject, answers) {
+            var filteredSubject = filterSubject(subject);
+            console.log("filteredSubject", filteredSubject);
+             return filteredSubject.length == 0
+                 ? "# del ticket es requerido"
+                 : true
           },
         },
         {
@@ -205,7 +209,7 @@ module.exports = function(options) {
           scope +
           ": " +
           answers.type.emoji +
-          " CNPS-" + answers.ticket + " "
+          " CNPS-" + answers.ticket.toString() + " "
           answers.subject.trim()
         ).slice(0, options.maxLineWidth);
 
