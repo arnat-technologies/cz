@@ -8,23 +8,27 @@
     "description": "Una corrección de error"
   },
   "docs": {
-    "emoji": "📚",
-    "description": "Cambios solamente en documentación"
+    "emoji": "📝",
+    "description": "Cambios en la documentación"
   },
   "style": {
     "emoji": "🎨",
-    "description": "Cambios que no afectan el código."
+    "description": "Cambios en formateo, indentacion, etc"
   },
   "refactor": {
-    "emoji": "🔨",
+    "emoji": "♻️",
     "description": "Un cambio de código que no corrige un error ni agrega una característica"
   },
   "perf": {
-    "emoji": "🚀",
+    "emoji": "⚡️",
     "description": "Un cambio de código que mejora el rendimiento."
   },
   "test": {
-    "emoji": "🚨",
+    "emoji": "✅",
     "description": "Agregar pruebas faltantes o corregir pruebas existentes"
+  },
+  "chore": {
+    "emoji": "👷",
+    "description": "Cambios en el build o en las herramientas"
   }
 }

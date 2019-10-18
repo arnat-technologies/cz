@@ -88,30 +88,21 @@ module.exports = function(options) {
         {
           type: "list",
           name: "type",
-          message: "Selecciona el tipo de cambio que estas enviando:",
+          message: "Selecciona el tipo de cambio:",
           choices: choices
         },
         {
           type: "input",
-          name: "ticket",
-          message:
-                'Agrega el # del ticket que estas trabajando:\n',
-          default: '',
-          validate: function (subject, answers) {
-            console.log("ticket", subject);
-             return subject.length == 0
-                 ? "# del ticket es requerido"
-                 : true
-          },
-        },
-        {
-          type: "input",
           name: "scope",
-          message: "¿Cuál es el alcance del cambio (componente o archivo)?: ",
+          message: "Especifica el alcance del cambio (Componente/Archivo): ",
           filter: function(value) {
             return options.disableScopeLowerCase
               ? value.trim()
               : value.trim().toLowerCase();
+          },
+          validate: function(subject, answers) {
+            console.log("scope", subject);
+            return subject.length == 0 ? "El alcance es requerido" : true;
           }
         },
         {
@@ -119,7 +110,7 @@ module.exports = function(options) {
           name: "subject",
           message: function(answers) {
             return (
-              "Escriba la descripción breve e imperativa del cambio (max " +
+              "Escriba la descripción breve del cambio (max " +
               maxSummaryLength(options, answers) +
               " caracteres):\n"
             );
@@ -129,7 +120,7 @@ module.exports = function(options) {
             var filteredSubject = filterSubject(subject);
             console.log("filteredSubject", filteredSubject);
             return filteredSubject.length == 0
-              ? "descripción es requerida"
+              ? "descripción es requerido"
               : filteredSubject.length <= maxSummaryLength(options, answers)
               ? true
               : "La descripción debe ser menos o igual a " +
@@ -148,6 +139,16 @@ module.exports = function(options) {
           },
           filter: function(subject) {
             return filterSubject(subject);
+          }
+          },
+        {
+          type: "input",
+          name: "ticket",
+          message: "Agrega el # del ticket:\n",
+          default: "",
+          validate: function(subject, answers) {
+            console.log("ticket", subject);
+            return (subject.length == 0 && !isNaN(num)) ? "# del ticket es requerido" : true;
           }
         },
         {
@@ -208,8 +209,9 @@ module.exports = function(options) {
           scope +
           ": " +
           answers.type.emoji +
-          " CNPS-" + answers.ticket.toString() + " "
-          (answers.subject.trim())
+          " CNPS-" +
+          answers.ticket.toString() +
+          " "(answers.subject.trim())
         ).slice(0, options.maxLineWidth);
 
         // Wrap these lines at options.maxLineWidth characters
