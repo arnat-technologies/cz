@@ -150,8 +150,9 @@ module.exports = function(options) {
             console.log("ticket ", subject);
             var filteredSubject = filterSubject(subject);
 
-            if (String(filterSubject === '0')) return true;
-            return filteredSubject.length == 0
+            if (!filteredSubject || isNaN(filteredSubject) || filterSubject == '0') return "# invalido";
+
+            return +filteredSubject.length == 0
               ? "# del Ticket es requerido"
               : filteredSubject.length <= 2
               ? true
