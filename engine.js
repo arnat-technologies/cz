@@ -148,7 +148,7 @@ module.exports = function(options) {
           default: "",
           validate: function(subject, answers) {
             console.log("ticket", subject);
-            return (subject.length == 0 && !isNaN(num)) ? "# del ticket es requerido" : true;
+            return (String(subject).length == 0 && !isNaN(num)) ? "# del ticket es requerido" : true;
           }
         },
         {
