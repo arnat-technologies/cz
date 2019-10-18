@@ -149,6 +149,8 @@ module.exports = function(options) {
           validate: function (subject, answers) {
             console.log("ticket ", subject);
             var filteredSubject = filterSubject(subject);
+
+            if (String(filterSubject === '0')) return true;
             return filteredSubject.length == 0
               ? "# del Ticket es requerido"
               : filteredSubject.length <= 2
@@ -210,13 +212,13 @@ module.exports = function(options) {
         var scope = answers.scope ? "(" + answers.scope + ")" : "";
 
         // Hard limit this line in the validate
+        var ticket = String(answers.ticket) === '0' ? '' : " CNPS-" + String(answers.ticket);
         var head = (
           answers.type.name +
           scope +
           ": " +
           answers.type.emoji +
-          " CNPS-" +
-          String(answers.ticket) +
+          ticket + 
           " " + (answers.subject.trim())
         ).slice(0, options.maxLineWidth);
 
