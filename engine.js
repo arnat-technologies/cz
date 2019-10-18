@@ -146,9 +146,15 @@ module.exports = function(options) {
           name: "ticket",
           message: "Agrega el # del ticket:\n",
           default: "",
-          validate: function(subject, answers) {
-            console.log("ticket", subject);
-            return (String(subject).length == 0 && !isNaN(num)) ? "# del ticket es requerido" : true;
+          validate: function (subject, answers) {
+            console.log("ticket ", subject);
+            var filteredSubject = filterSubject(subject);
+            return filteredSubject.length == 0
+              ? "# del Ticket es requerido"
+              : filteredSubject.length <= 2
+              ? true
+              : "# del ticket debe ser un # mayor";
+              
           }
         },
         {
@@ -210,8 +216,8 @@ module.exports = function(options) {
           ": " +
           answers.type.emoji +
           " CNPS-" +
-          answers.ticket.toString() +
-          " "(answers.subject.trim())
+          String(answers.ticket) +
+          " " + (answers.subject.trim())
         ).slice(0, options.maxLineWidth);
 
         // Wrap these lines at options.maxLineWidth characters
