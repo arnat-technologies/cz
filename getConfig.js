@@ -23,3 +23,4 @@ const getConfig = (cwd = process.cwd()) => {
 }
 
 module.exports = getConfig;
+// comment

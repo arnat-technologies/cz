@@ -118,7 +118,6 @@ module.exports = function(options) {
           default: options.defaultSubject,
           validate: function(subject, answers) {
             var filteredSubject = filterSubject(subject);
-            console.log("filteredSubject", filteredSubject);
             return filteredSubject.length == 0
               ? "descripción es requerido"
               : filteredSubject.length <= maxSummaryLength(options, answers)
@@ -144,19 +143,22 @@ module.exports = function(options) {
         {
           type: "input",
           name: "ticket",
-          message: "Agrega el # del ticket:\n",
+          message: "Agrega el # del ticket (0 si no aplica):\n",
           default: "",
           validate: function (subject, answers) {
-            console.log("ticket ", subject);
+            console.log("ticket \n", subject);
             var filteredSubject = filterSubject(subject);
+            if (!filteredSubject || isNaN(filteredSubject)) return "# invalido";
+            if (filteredSubject == '0') return true;
 
-            if (!filteredSubject || isNaN(filteredSubject) || filterSubject == '0') return "# invalido";
+            filteredSubject = filteredSubject.replace('-', '');
+            filteredSubject = filteredSubject.replace('+', '');
 
-            return +filteredSubject.length == 0
+            return filteredSubject.length == 0
               ? "# del Ticket es requerido"
-              : filteredSubject.length <= 2
-              ? true
-              : "# del ticket debe ser un # mayor";
+              : filteredSubject.length <= 2  || filteredSubject.length > 4
+              ? "# del ticket debe ser valido"
+              : true;
               
           }
         },
