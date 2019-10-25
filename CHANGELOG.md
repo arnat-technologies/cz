@@ -1,3 +1,13 @@
+## [0.10.8](https://github.com/rsurjano/emoji-cz/compare/v0.10.6...v0.10.8) (2019-10-25)
+
+
+### Bug Fixes
+
+* **engine:** 🐛 actualizado la validacion del 0 para cuando no hay tickets ([8b8cd89](https://github.com/rsurjano/emoji-cz/commit/8b8cd89f6603cd9c9ba10e142126df40cb91d721))
+* **package:** 🐛 actualizado pacakge ([0f1edee](https://github.com/rsurjano/emoji-cz/commit/0f1edee6b7252df2b702048575978fe071214377))
+
+
+
 ## [0.10.6](https://github.com/rsurjano/emoji-cz/compare/v0.10.5...v0.10.6) (2019-10-18)
 
 
