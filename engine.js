@@ -164,6 +164,13 @@ module.exports = function(options) {
         },
         {
           type: "input",
+          name: "code",
+          message:
+            "Proporcione la etiqueta\n",
+          default: "CNPS"
+        },
+        {
+          type: "input",
           name: "body",
           message:
             "Proporcione la descripción detallada: (enter para saltar)\n",
@@ -215,7 +222,7 @@ module.exports = function(options) {
         var scope = answers.scope ? "(" + answers.scope + ")" : "";
 
         // Hard limit this line in the validate
-        var ticket = String(answers.ticket) === '0' ? '' : " CNPS-" + String(answers.ticket);
+        var ticket = String(answers.ticket) === '0' ? '' : " " + answers.code + "-" + String(answers.ticket);
         var head = (
           answers.type.name +
           scope +
