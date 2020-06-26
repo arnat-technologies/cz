@@ -55,8 +55,8 @@ module.exports = function(options) {
       value: {
         emoji: type.emoji,
         name: name,
-        value: key
-      }
+        value: key,
+      },
     };
   });
 
@@ -89,7 +89,7 @@ module.exports = function(options) {
           type: "list",
           name: "type",
           message: "Selecciona el tipo de cambio:",
-          choices: choices
+          choices: choices,
         },
         {
           type: "input",
@@ -103,7 +103,7 @@ module.exports = function(options) {
           validate: function(subject, answers) {
             console.log("scope", subject);
             return subject.length == 0 ? "El alcance es requerido" : true;
-          }
+          },
         },
         {
           type: "input",
@@ -138,49 +138,45 @@ module.exports = function(options) {
           },
           filter: function(subject) {
             return filterSubject(subject);
-          }
           },
+        },
         {
           type: "input",
           name: "ticket",
           message: "Agrega el # del ticket (0 si no aplica):\n",
           default: "",
-          validate: function (subject, answers) {
+          validate: function(subject, answers) {
             console.log("ticket \n", subject);
             var filteredSubject = filterSubject(subject);
             if (!filteredSubject || isNaN(filteredSubject)) return "# invalido";
-            if (filteredSubject == '0') return true;
+            if (filteredSubject == "0") return true;
 
-            filteredSubject = filteredSubject.replace('-', '');
-            filteredSubject = filteredSubject.replace('+', '');
+            filteredSubject = filteredSubject.replace("-", "");
+            filteredSubject = filteredSubject.replace("+", "");
 
             return filteredSubject.length == 0
               ? "# del Ticket es requerido"
-              : filteredSubject.length <= 2  || filteredSubject.length > 4
-              ? "# del ticket debe ser valido"
               : true;
-              
-          }
+          },
         },
         {
           type: "input",
           name: "code",
-          message:
-            "Proporcione la etiqueta\n",
-          default: "CNPS"
+          message: "Proporcione la etiqueta\n",
+          default: "CNPS",
         },
         {
           type: "input",
           name: "body",
           message:
             "Proporcione la descripción detallada: (enter para saltar)\n",
-          default: ""
+          default: "",
         },
         {
           type: "confirm",
           name: "isBreaking",
           message: "¿Hay BREAKING CHANGES?",
-          default: false
+          default: false,
         },
         {
           type: "input",
@@ -188,7 +184,7 @@ module.exports = function(options) {
           message: "describe brevemente el BREAKING CHANGE:\n",
           when: function(answers) {
             return answers.isBreaking;
-          }
+          },
         },
         {
           type: "confirm",
@@ -197,7 +193,7 @@ module.exports = function(options) {
           default: options.defaultIssues ? true : false,
           when: function(answers) {
             return !answers.isBreaking;
-          }
+          },
         },
         {
           type: "input",
@@ -207,29 +203,33 @@ module.exports = function(options) {
           when: function(answers) {
             return answers.isIssueAffected;
           },
-          default: options.defaultIssues ? options.defaultIssues : undefined
-        }
+          default: options.defaultIssues ? options.defaultIssues : undefined,
+        },
       ]).then(function(answers) {
         var wrapOptions = {
           trim: true,
           cut: false,
           newline: "\n",
           indent: "",
-          width: options.maxLineWidth
+          width: options.maxLineWidth,
         };
 
         // parentheses are only needed when a scope is present
         var scope = answers.scope ? "(" + answers.scope + ")" : "";
 
         // Hard limit this line in the validate
-        var ticket = String(answers.ticket) === '0' ? '' : " " + answers.code + "-" + String(answers.ticket);
+        var ticket =
+          String(answers.ticket) === "0"
+            ? ""
+            : " " + answers.code + "-" + String(answers.ticket);
         var head = (
           answers.type.name +
           scope +
           ": " +
           answers.type.emoji +
-          ticket + 
-          " " + (answers.subject.trim())
+          ticket +
+          " " +
+          answers.subject.trim()
         ).slice(0, options.maxLineWidth);
 
         // Wrap these lines at options.maxLineWidth characters
@@ -246,6 +246,6 @@ module.exports = function(options) {
 
         commit(filter([head, body, breaking, issues]).join("\n\n"));
       });
-    }
+    },
   };
 };
