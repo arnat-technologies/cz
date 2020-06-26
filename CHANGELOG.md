@@ -1,3 +1,12 @@
+# [0.12.0](https://github.com/rsurjano/emoji-cz/compare/v0.10.9...v0.12.0) (2020-06-26)
+
+
+### Features
+
+* **Code for ticket:** ✨ it is adding code for ticket, by default CNPS ([66e201e](https://github.com/rsurjano/emoji-cz/commit/66e201e6ba9eefe3a20cd119981a662566829720))
+
+
+
 # [0.11.0](https://github.com/rsurjano/emoji-cz/compare/v0.10.9...v0.11.0) (2020-03-29)
 
 
