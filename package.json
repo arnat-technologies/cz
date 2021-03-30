@@ -1,19 +1,19 @@
 {
-  "name": "@rsurjano/emoji-cz",
-  "version": "0.12.0",
-  "description": "Un adaptador emoji para commitizen en español.",
+  "name": "@arnat/cz",
+  "version": "1.0.0",
+  "description": "Commitizen adapter with emojis",
   "preferGlobal": true,
   "main": "index.js",
-  "homepage": "https://github.com/rsurjano/emoji-cz",
+  "homepage": "https://github.com/arnat-technologies/cz",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rsurjano/emoji-cz.git"
+    "url": "https://github.com/arnat-technologies/cz.git"
   },
   "engineStrict": true,
   "engines": {
     "node": ">= 10"
   },
-  "author": "Roy Surjano <roy@surjano.xyz>",
+  "author": "Roy Surjano <roy.surjano@arnat.digital>",
   "license": "MIT",
   "dependencies": {
     "find-config": "^1.0.0",
