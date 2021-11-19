@@ -1,42 +1,45 @@
-# emoji-cz
+# Arnat CZ Adapter for Commitizen
 
-> :sparkles: Un [adaptador](http://npm.im/emoji-cz) con emoji para commitizen.
+> :sparkles: A [adapter](http://npm.im/arnat-cz) with strong standards Tech industries.
 
-[![NPM](https://nodei.co/npm/emoji-cz.png?downloads=true&stars=true)](https://nodei.co/npm/emoji-cz/)
+[![NPM](https://nodei.co/npm/arnat-cz.png?downloads=true&stars=true)](https://nodei.co/npm/arnat-cz/)
 
-```
+```shell
 ? Selecciona el tipo de cambio que estas enviando: (Use arrow keys)
-❯ ✨  Feat:      Una nueva característica
-  🐛  Fix:       Una corrección de error
-  📚  Docs:      Cambios solamente en documentación
-  🎨  Style:     Cambios que no afectan el código.
-  🔨  Refactor:  Un cambio de código que no corrige un error ni agrega una característica
-  🚀  Perf:      Un cambio de código que mejora el rendimiento.
-  🚨  Test:      Agregar pruebas faltantes o corregir pruebas existentes
+❯ ✨  Feat:      A new feature
+  🐛  Fix:       A bugfix
+  📚  Docs:      Documentation updates
+  🎨  Style:     No side effects on code
+  🔨  Refactor:  Code change
+  🚀  Perf:      Improve performance
+  🚨  Test:      Add or update unit tests
+  👷  Chore:     Build changes on tools
 ```
-
-## Demo
-
-Solo mira el historial de confirmaciones :point_up:
 
 ## Instalation
 
 ```
-yarn global add @rsurjano/emoji-cz
-# O
-# npm install --global @rsurjano/emoji-cz
+yarn global add @arnat/cz
+# or
+npm install --global @arnat/cz
 
 establecer como adaptador predeterminado globalmente
-echo '{ "path": "emoji-cz" }' > ~/.czrc
+echo '{ "path": "arnat-cz" }' > ~/.czrc
 ```
 
-## Uso
+## Development
 
-Simplemente use `git cz` en lugar de`git commit` cuando se comprometa. Ver el documento de [Commitizen](https://github.com/commitizen/cz-cli) para más información.
+run `npm run reload` and invoke it with `git cz`
 
-## Configuraciones
+Uninstall it after testing: `npm uninstall -g @arnat/cz`
 
-Puede sobrescribir la configuración de 3 formas diferentes, aplicará la configuración en este orden:
+## Use
+
+Run `git cz` instead `git commit` View [Commitizen](https://github.com/commitizen/cz-cli) for more information.
+
+## Configuration
+
+Configs are applied in the following order:
 
 1. `package.json`
 2. `.cz.json`
@@ -47,7 +50,7 @@ Puede sobrescribir la configuración de 3 formas diferentes, aplicará la config
 "config": {
   "commitizen": {
     // ...
-    "emoji-cz": {
+    "arnat-cz": {
       // Overwrite types prompted to the command line.
       "types": {
         "Fix": {
@@ -75,16 +78,16 @@ Puede sobrescribir la configuración de 3 formas diferentes, aplicará la config
 
 // in .cz.json or .czrc
 {
-  "emoji-cz": {
+  "arnat-cz": {
     //...
   }
 }
 ```
 
-## Autor
+## Author
 
-Roy Surjano <roy@surjano.xyz>
+Arnat Technologies <info@arnat.digital>
 
-## Licencia
+## Licence
 
 [MIT](LICENSE)

@@ -1,3 +1,6 @@
 {
-  "path": "@rsurjano/emoji-cz"
+  "path": "@arnat/cz",
+  "arnat-cz": {
+    "tag": "CIOX"
+  }
 }

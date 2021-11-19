@@ -41,6 +41,7 @@ var filterSubject = function(subject) {
 // fine.
 module.exports = function(options) {
   var types = options.types;
+  var TAG = options.tag || "ARNAT";
 
   var length = longest(Object.keys(types)).length + 1;
   var choices = map(types, function(type, key) {
@@ -88,13 +89,13 @@ module.exports = function(options) {
         {
           type: "list",
           name: "type",
-          message: "Selecciona el tipo de cambio:",
+          message: "Select one:",
           choices: choices,
         },
         {
           type: "input",
           name: "scope",
-          message: "Especifica el alcance del cambio (Componente/Archivo): ",
+          message: "Specify Scope (Component/File): ",
           filter: function(value) {
             return options.disableScopeLowerCase
               ? value.trim()
@@ -102,7 +103,7 @@ module.exports = function(options) {
           },
           validate: function(subject, answers) {
             console.log("scope", subject);
-            return subject.length == 0 ? "El alcance es requerido" : true;
+            return subject.length == 0 ? "Scope is required" : true;
           },
         },
         {
@@ -163,7 +164,7 @@ module.exports = function(options) {
           type: "input",
           name: "code",
           message: "Proporcione la etiqueta\n",
-          default: "CNPS",
+          default: TAG,
         },
         {
           type: "input",
@@ -226,7 +227,6 @@ module.exports = function(options) {
           answers.type.name +
           scope +
           ": " +
-          answers.type.emoji +
           ticket +
           " " +
           answers.subject.trim()

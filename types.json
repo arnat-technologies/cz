@@ -1,34 +1,34 @@
 {
-  "feat": {
+  "Feat": {
     "emoji": "✨",
-    "description": "Una nueva característica"
+    "description": "a new feature"
   },
-  "fix": {
+  "Fix": {
     "emoji": "🐛",
-    "description": "Una corrección de error"
+    "description": "a bugfix"
   },
-  "docs": {
+  "Docs": {
     "emoji": "📝",
-    "description": "Cambios en la documentación"
+    "description": "documentation updates"
   },
-  "style": {
+  "Style": {
     "emoji": "🎨",
-    "description": "Cambios en formateo, indentacion, etc"
+    "description": "no side effects on code"
   },
-  "refactor": {
+  "Refactor": {
     "emoji": "♻️",
-    "description": "Un cambio de código que no corrige un error ni agrega una característica"
+    "description": " code Change"
   },
-  "perf": {
+  "Perf": {
     "emoji": "⚡️",
-    "description": "Un cambio de código que mejora el rendimiento."
+    "description": "improve performance"
   },
-  "test": {
+  "Test": {
     "emoji": "✅",
-    "description": "Agregar pruebas faltantes o corregir pruebas existentes"
+    "description": "add or update unit tests"
   },
-  "chore": {
+  "Chore": {
     "emoji": "👷",
-    "description": "Cambios en el build o en las herramientas"
+    "description": "build changes on tools"
   }
 }

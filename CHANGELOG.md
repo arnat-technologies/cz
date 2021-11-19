@@ -1,3 +1,20 @@
+# 1.1.0 (2021-11-17)
+
+
+### Bug Fixes
+
+* **engine:** 🐛 actualizado la validacion del 0 para cuando no hay tickets ([8b8cd89](https://github.com/arnat-technologies/cz/commit/8b8cd89f6603cd9c9ba10e142126df40cb91d721))
+* **engine:** 🐛 agregado los espacios y la cantidad maxima de caracteres ([e5bbd71](https://github.com/arnat-technologies/cz/commit/e5bbd71cf9db6d4cb14c9cec012cb08b0795ac6f))
+* **package:** 🐛 actualizado pacakge ([0f1edee](https://github.com/arnat-technologies/cz/commit/0f1edee6b7252df2b702048575978fe071214377))
+
+
+### Features
+
+* **Code for ticket:** ✨ it is adding code for ticket, by default CNPS ([66e201e](https://github.com/arnat-technologies/cz/commit/66e201e6ba9eefe3a20cd119981a662566829720))
+* **commit:** ✨ agregado CNSP como parte del commit y agregado el # como campo ([3fd3108](https://github.com/arnat-technologies/cz/commit/3fd31080078e19d761351f047a6e0820c7b8bb20))
+
+
+
 # [0.12.0](https://github.com/rsurjano/emoji-cz/compare/v0.10.9...v0.12.0) (2020-06-26)
 
 
